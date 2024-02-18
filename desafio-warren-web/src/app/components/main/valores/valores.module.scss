@@ -1,0 +1,26 @@
+.Container {
+  height: auto;
+
+  margin-top: 2rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 2px solid black;
+      padding: 0.3rem;
+    }
+  }
+}
+
+.Titulos {
+  background-color: rgb(240, 167, 72);
+  border: 1px solid black;
+
+  th {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+}

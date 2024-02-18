@@ -1,0 +1,60 @@
+.Container {
+  display: flex;
+  align-items: center;
+
+  input[type="search"] {
+    height: 5rem;
+    width: 25rem;
+    padding-left: 5rem;
+
+    font-size: 1.2rem;
+
+    display: block;
+    cursor: pointer;
+
+    border: 2px solid black;
+    border-radius: 1px;
+    background: transparent url("../../../../../public/icons//loupe.png")
+      no-repeat 13px;
+  }
+
+  input[type="search"]:focus {
+    border-radius: 1rem;
+    outline: 2px solid black;
+  }
+
+  details {
+    margin-left: 2rem;
+    text-align: center;
+    cursor: pointer;
+
+    background-color: #060b0cb9;
+
+    summary {
+      cursor: pointer;
+
+      height: 2.5rem;
+      width: 15rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 1.2rem;
+
+      color: white;
+    }
+
+    li {
+      list-style: none;
+      color: white;
+      background-color: #060b0cb9;
+
+      padding: 0.3rem 0px;
+
+      &:hover {
+        color: rgb(0, 253, 198);
+      }
+    }
+  }
+}
