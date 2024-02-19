@@ -12,6 +12,16 @@
       border: 2px solid black;
       padding: 0.3rem;
     }
+
+    tbody {
+      tr {
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(240, 167, 72);
+        }
+      }
+    }
   }
 }
 
