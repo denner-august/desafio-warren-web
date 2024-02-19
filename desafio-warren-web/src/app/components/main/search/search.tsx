@@ -1,4 +1,4 @@
-import { ContextProps } from "@/app/context/registerContext";
+import { ContextProps } from "@/app/types/projectTypes";
 import styles from "./search.module.scss";
 
 export function Search({ setStatus, setSearch, StatusOption }: ContextProps) {
