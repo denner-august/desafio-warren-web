@@ -2,6 +2,8 @@ import styles from "./modal.module.scss";
 import Registros from "@/../registro/registros.json";
 import closeButton from "@/../public/icons/close.png";
 import Image from "next/image";
+import { Slider } from "./slider/slider";
+import { Transactions } from "../transactions/transactions";
 
 interface modalProps {
   isOpen: boolean;
@@ -10,6 +12,12 @@ interface modalProps {
 }
 
 export function Modal({ id, isOpen, setOpen }: modalProps) {
+  const transactionsNumber = {
+    created: 0,
+    meio: 5,
+    processed: 10,
+  };
+
   const ModalView = () => {
     let findRegistro = Registros.find((item) => item.id === id);
 
@@ -17,7 +25,7 @@ export function Modal({ id, isOpen, setOpen }: modalProps) {
       return (
         <section className={styles.Container}>
           <article className={styles["modal-content"]}>
-            <div>
+            <div className={styles.controller}>
               <p>Depósito</p>
               <button onClick={() => setOpen(false)}>
                 <Image
@@ -25,9 +33,15 @@ export function Modal({ id, isOpen, setOpen }: modalProps) {
                   width={35}
                   height={35}
                   alt="Picture of the author"
+                  blurDataURL={"@/../public/icons/close.png"}
                 />
               </button>
             </div>
+
+            <Slider
+              openTransactions={transactionsNumber[findRegistro?.status]}
+            />
+            <Transactions />
           </article>
         </section>
       );
