@@ -12,12 +12,6 @@ interface modalProps {
 }
 
 export function Modal({ id, isOpen, setOpen }: modalProps) {
-  const transactionsNumber = {
-    created: 0,
-    meio: 5,
-    processed: 10,
-  };
-
   const ModalView = () => {
     let findRegistro = Registros.find((item) => item.id === id);
 
@@ -38,9 +32,9 @@ export function Modal({ id, isOpen, setOpen }: modalProps) {
               </button>
             </div>
 
-            <Slider
-              openTransactions={transactionsNumber[findRegistro?.status]}
-            />
+            {findRegistro ? (
+              <Slider openTransactions={findRegistro.status} />
+            ) : null}
             <Transactions />
           </article>
         </section>
