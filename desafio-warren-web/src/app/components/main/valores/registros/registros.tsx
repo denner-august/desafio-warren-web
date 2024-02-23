@@ -1,4 +1,4 @@
-import { RenderRegistrosProps, registroProps } from "@/app/types/projectTypes";
+import { RenderRegistrosProps } from "@/app/types/projectTypes";
 
 export function RenderRegistros({
   RegisterSearch,
