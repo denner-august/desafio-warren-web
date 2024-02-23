@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode, createContext, useEffect, useState } from "react";
-import registros from "@/../registros.json";
+import registros from "@/../registro/registros.json";
 import { ContextProps } from "../types/projectTypes";
 
 interface childrenPros {
@@ -10,15 +10,15 @@ interface childrenPros {
 export const Context = createContext({} as ContextProps);
 
 export function RegisterContextProvider({ children }: childrenPros) {
-  const StatusOption = ["created", "processed", "concluded"];
+  const StatusOption = ["All", "created", "processed", "concluded"];
 
   const [search, setSearch] = useState("");
-  const [status, setStatus] = useState("concluded");
+  const [status, setStatus] = useState("All");
 
   let registerFilter = registros;
 
   let RegisterSearch = registerFilter.filter((item) => {
-    if (status === "concluded") {
+    if (status === "All") {
       return (
         item.title.toLowerCase().indexOf(String(search?.toLowerCase())) > -1
       );
