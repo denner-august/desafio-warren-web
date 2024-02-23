@@ -1,24 +1,17 @@
-import { registroProps, ContextProps } from "@/app/context/registerContext";
+import { RenderRegistrosProps } from "@/app/types/projectTypes";
 import Style from "./valores.module.scss";
+import { Modal } from "../../modal/modal";
+import { useState } from "react";
+import { RenderRegistros } from "./registros/registros";
 
-export function Valores({ RegisterSearch }: Partial<ContextProps>) {
-  const RenderRegistros = () => {
-    return RegisterSearch?.map(({ id, title, description, amount, status }) => {
-      return (
-        <tr key={id} className={Style.Registros}>
-          <td>{title}</td>
-          <td>{description}</td>
-          <td>{status}</td>
-          <td>
-            {amount.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </td>
-        </tr>
-      );
-    });
-  };
+export function Valores({ RegisterSearch }: Partial<RenderRegistrosProps>) {
+  const [modal, setModal] = useState(false);
+  const [idRegister, setIdRegister] = useState("");
+
+  function ModalController(id: string) {
+    setIdRegister(id);
+    setModal(true);
+  }
 
   return (
     <div className={Style.Container}>
@@ -33,9 +26,14 @@ export function Valores({ RegisterSearch }: Partial<ContextProps>) {
         </thead>
 
         <tbody>
-          <RenderRegistros />
+          <RenderRegistros
+            RegisterSearch={RegisterSearch}
+            controller={ModalController}
+          />
         </tbody>
       </table>
+
+      <Modal isOpen={modal} setOpen={setModal} id={idRegister} />
     </div>
   );
 }

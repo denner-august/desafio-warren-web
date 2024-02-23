@@ -1,0 +1,45 @@
+.Container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.562);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  height: 25rem;
+  width: 50rem;
+  padding: 1rem;
+
+  border-radius: 0.5rem;
+  background-color: white;
+
+  .controller {
+    display: flex;
+    justify-content: center;
+
+    p {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-left: auto;
+    }
+  }
+
+  div button {
+    cursor: pointer;
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+  }
+}

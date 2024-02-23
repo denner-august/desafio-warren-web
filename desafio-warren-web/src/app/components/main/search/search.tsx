@@ -1,11 +1,24 @@
-import { ContextProps } from "@/app/context/registerContext";
+import { ContextProps } from "@/app/types/projectTypes";
 import styles from "./search.module.scss";
+import { useState } from "react";
 
 export function Search({ setStatus, setSearch, StatusOption }: ContextProps) {
+  const [currentStatus, SetCurrentStatus] = useState("Status");
+
+  function ReadStatus(status: string) {
+    setStatus(status);
+    let currentStatus = StatusOption.find((item) => item === status);
+    if (currentStatus) {
+      SetCurrentStatus(currentStatus);
+      return;
+    }
+    SetCurrentStatus("Status");
+  }
+
   const StatusList = () => {
     return StatusOption.map((item, id) => {
       return (
-        <li onClick={() => setStatus(item)} key={id}>
+        <li onClick={() => ReadStatus(item)} key={id}>
           {item}
         </li>
       );
@@ -23,7 +36,7 @@ export function Search({ setStatus, setSearch, StatusOption }: ContextProps) {
       />
 
       <details>
-        <summary>Status</summary>
+        <summary>{currentStatus}</summary>
         <ul>
           <StatusList />
         </ul>
