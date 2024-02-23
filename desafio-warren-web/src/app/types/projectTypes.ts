@@ -18,3 +18,8 @@ export interface ContextProps {
   setSearch: (e: string) => void;
   setStatus: (e: string) => void;
 }
+
+export interface RenderRegistrosProps {
+  RegisterSearch?: registroProps[];
+  controller: (id: string) => void;
+}
