@@ -1,9 +1,10 @@
-import { ContextProps } from "@/app/types/projectTypes";
+import { RenderRegistrosProps } from "@/app/types/projectTypes";
 import Style from "./valores.module.scss";
 import { Modal } from "../../modal/modal";
 import { useState } from "react";
+import { RenderRegistros } from "./registros/registros";
 
-export function Valores({ RegisterSearch }: Partial<ContextProps>) {
+export function Valores({ RegisterSearch }: Partial<RenderRegistrosProps>) {
   const [modal, setModal] = useState(false);
   const [idRegister, setIdRegister] = useState("");
 
@@ -11,24 +12,6 @@ export function Valores({ RegisterSearch }: Partial<ContextProps>) {
     setIdRegister(id);
     setModal(true);
   }
-
-  const RenderRegistros = () => {
-    return RegisterSearch?.map(({ id, title, description, amount, status }) => {
-      return (
-        <tr key={id} onClick={() => ModalController(id)}>
-          <td>{title}</td>
-          <td>{description}</td>
-          <td>{status}</td>
-          <td>
-            {amount.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </td>
-        </tr>
-      );
-    });
-  };
 
   return (
     <div className={Style.Container}>
@@ -43,7 +26,10 @@ export function Valores({ RegisterSearch }: Partial<ContextProps>) {
         </thead>
 
         <tbody>
-          <RenderRegistros />
+          <RenderRegistros
+            RegisterSearch={RegisterSearch}
+            controller={ModalController}
+          />
         </tbody>
       </table>
 
