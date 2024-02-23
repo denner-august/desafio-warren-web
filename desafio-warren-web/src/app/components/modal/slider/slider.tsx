@@ -1,7 +1,7 @@
 import styles from "./slider.module.scss";
 
 interface SliderProps {
-  openTransactions: string;
+  openTransactions?: string;
 }
 
 interface transactionsNumberProps {
@@ -13,21 +13,24 @@ export function Slider({ openTransactions }: SliderProps) {
     processed: 5,
     concluded: 10,
   };
-  return (
-    <div className={styles.Container}>
-      <input
-        disabled
-        type="range"
-        min={0}
-        max={10}
-        defaultValue={transactionsNumber[openTransactions]}
-      />
 
-      <datalist className={styles.datalist}>
-        <option value="0" label="created"></option>
-        <option value="5" label="processed"></option>
-        <option value="10" label="concluded"></option>
-      </datalist>
-    </div>
-  );
+  if (openTransactions) {
+    return (
+      <div className={styles.Container}>
+        <input
+          disabled
+          type="range"
+          min={0}
+          max={10}
+          defaultValue={transactionsNumber[openTransactions]}
+        />
+
+        <datalist className={styles.datalist}>
+          <option value="0" label="created"></option>
+          <option value="5" label="processed"></option>
+          <option value="10" label="concluded"></option>
+        </datalist>
+      </div>
+    );
+  }
 }
