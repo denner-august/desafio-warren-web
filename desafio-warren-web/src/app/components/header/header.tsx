@@ -6,10 +6,11 @@ export function Header() {
   return (
     <header className={styles.Container}>
       <Image
+        priority
         src={logo}
         width={75}
         height={75}
-        alt="Picture of the author"
+        alt="logo"
         blurDataURL={"@/../public/icons/budget.png"}
       />
     </header>
