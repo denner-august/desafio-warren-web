@@ -32,10 +32,18 @@ export function Modal({ id, isOpen, setOpen }: modalProps) {
               </button>
             </div>
 
-            {findRegistro ? (
-              <Slider openTransactions={findRegistro.status} />
-            ) : null}
-            <Transactions />
+            <Slider openTransactions={findRegistro?.status} />
+
+            <Transactions
+              title="transferencia de"
+              from={findRegistro?.from}
+              amount={findRegistro?.amount}
+            />
+            <Transactions
+              title="para"
+              from={findRegistro?.to}
+              amount={findRegistro?.amount}
+            />
           </article>
         </section>
       );
