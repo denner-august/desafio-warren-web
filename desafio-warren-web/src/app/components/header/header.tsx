@@ -4,8 +4,9 @@ import logo from "@/../public/icons/budget.png";
 
 export function Header() {
   return (
-    <header className={styles.Container}>
+    <header className={styles.Container} role="heading">
       <Image
+        role="logo"
         priority
         src={logo}
         width={75}
