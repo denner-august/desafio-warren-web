@@ -1,0 +1,30 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 15rem;
+
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+
+    border-bottom: 3px solid black;
+
+    padding-bottom: 1rem;
+  }
+
+  article {
+    ul {
+      margin-top: 1rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      padding: 0px 1rem;
+
+      li {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
