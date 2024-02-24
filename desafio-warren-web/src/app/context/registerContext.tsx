@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, createContext, useEffect, useState } from "react";
+import { ReactNode, createContext, useState } from "react";
 import registros from "@/../registro/registros.json";
 import { ContextProps } from "../types/projectTypes";
 
