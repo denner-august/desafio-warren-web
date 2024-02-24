@@ -6,14 +6,16 @@ import { Valores } from "./valores/valores";
 import { Context } from "@/app/context/registerContext";
 
 export function Main() {
-  const { setSearch, setStatus, RegisterSearch, StatusOption } =
+  const { setSearch, setStatus, RegisterSearch, StatusOption, search } =
     useContext(Context);
+
   return (
     <main className={styles.Container}>
       <Search
         setSearch={setSearch}
         setStatus={setStatus}
         StatusOption={StatusOption}
+        search={search}
       />
       <Valores RegisterSearch={RegisterSearch} />
     </main>
