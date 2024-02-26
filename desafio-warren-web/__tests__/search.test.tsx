@@ -35,7 +35,45 @@ describe("change value input search", () => {
     fireEvent.change(input, { target: { value: "Registro" } });
 
     expect(input.value).toBe("Registro");
+  });
+});
 
-    // screen.logTestingPlaygroundURL();
+describe("checks component status", () => {
+  it("verify name summary Status", () => {
+    render(
+      <RegisterContextProvider>
+        <Setup />
+      </RegisterContextProvider>
+    );
+
+    const ContainerStatus = screen.getByRole("status");
+
+    expect(ContainerStatus.textContent).toBe("Status");
+  });
+
+  it("count status", () => {
+    render(
+      <RegisterContextProvider>
+        <Setup />
+      </RegisterContextProvider>
+    );
+    const StatusOptions = screen.getAllByRole("statusOption");
+
+    expect(StatusOptions.length).toBe(4);
+  });
+
+  it("change name summary", () => {
+    render(
+      <RegisterContextProvider>
+        <Setup />
+      </RegisterContextProvider>
+    );
+    const StatusOptions = screen.getAllByRole("statusOption");
+    const ContainerStatus = screen.getByRole("status");
+
+    fireEvent.click(ContainerStatus);
+    fireEvent.click(StatusOptions[0]);
+
+    expect(ContainerStatus.textContent).toBe("All");
   });
 });
