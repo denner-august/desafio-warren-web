@@ -23,7 +23,7 @@ export function Search({
   const StatusList = () => {
     return StatusOption.map((item, id) => {
       return (
-        <li onClick={() => ReadStatus(item)} key={id}>
+        <li role="statusOption" onClick={() => ReadStatus(item)} key={id}>
           {item}
         </li>
       );
@@ -43,7 +43,7 @@ export function Search({
       />
 
       <details>
-        <summary>{currentStatus}</summary>
+        <summary role="status">{currentStatus}</summary>
         <ul>
           <StatusList />
         </ul>
