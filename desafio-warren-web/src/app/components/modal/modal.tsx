@@ -7,8 +7,8 @@ import { Transactions } from "../transactions/transactions";
 
 interface modalProps {
   isOpen: boolean;
-  setOpen: (e: boolean) => void;
   id: string;
+  setOpen: (e: boolean) => void;
 }
 
 export function Modal({ id, isOpen, setOpen }: modalProps) {
