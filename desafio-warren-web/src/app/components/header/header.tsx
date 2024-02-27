@@ -1,19 +1,14 @@
-import Image from "next/image";
 import styles from "./header.module.scss";
-import logo from "@/../public/icons/budget.png";
+import { ReactNode } from "react";
 
-export function Header() {
+interface HeaderProps {
+  children: ReactNode;
+}
+
+export function Header({ children }: HeaderProps) {
   return (
     <header className={styles.Container} role="heading">
-      <Image
-        role="logo"
-        priority
-        src={logo}
-        width={75}
-        height={75}
-        alt="logo"
-        blurDataURL={"@/../public/icons/budget.png"}
-      />
+      {children}
     </header>
   );
 }
