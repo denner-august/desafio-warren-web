@@ -1,13 +1,12 @@
 "use client";
-import { useContext } from "react";
 import styles from "./main.module.scss";
 import { Search } from "./search/search";
 import { Valores } from "./valores/valores";
-import { Context } from "@/app/context/registerContext";
+import { HookContext } from "../../../../hook/context";
 
 export function Main() {
   const { setSearch, setStatus, RegisterSearch, StatusOption, search } =
-    useContext(Context);
+    HookContext();
 
   return (
     <main className={styles.Container}>
