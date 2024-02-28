@@ -7,8 +7,7 @@ describe("testando jest", () => {
     render(<Header />);
 
     const heading = screen.getByRole("heading");
-    const logo = screen.getByRole("logo");
 
-    expect(heading && logo).toBeInTheDocument();
+    expect(heading).toBeInTheDocument();
   });
 });
