@@ -6,6 +6,7 @@ export interface registroProps {
   amount: number;
   from: string;
   to: string;
+  date: string;
 }
 
 export interface ContextProps {
