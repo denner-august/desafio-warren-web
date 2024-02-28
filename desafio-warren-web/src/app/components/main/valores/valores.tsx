@@ -1,5 +1,5 @@
-import { RenderRegistrosProps } from "@/app/types/projectTypes";
 import Style from "./valores.module.scss";
+import { RenderRegistrosProps } from "@/app/types/projectTypes";
 import { Modal } from "../../modal/modal";
 import { useState } from "react";
 import { RenderRegistros } from "./registros/registros";
