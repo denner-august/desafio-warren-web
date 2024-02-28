@@ -2,7 +2,12 @@ import { ContextProps } from "@/app/types/projectTypes";
 import styles from "./search.module.scss";
 import { useState } from "react";
 
-export function Search({ setStatus, setSearch, StatusOption }: ContextProps) {
+export function Search({
+  setStatus,
+  setSearch,
+  StatusOption,
+  search,
+}: ContextProps) {
   const [currentStatus, SetCurrentStatus] = useState("Status");
 
   function ReadStatus(status: string) {
@@ -18,7 +23,7 @@ export function Search({ setStatus, setSearch, StatusOption }: ContextProps) {
   const StatusList = () => {
     return StatusOption.map((item, id) => {
       return (
-        <li onClick={() => ReadStatus(item)} key={id}>
+        <li role="statusOption" onClick={() => ReadStatus(item)} key={id}>
           {item}
         </li>
       );
@@ -28,15 +33,17 @@ export function Search({ setStatus, setSearch, StatusOption }: ContextProps) {
   return (
     <div className={styles.Container}>
       <input
+        aria-label="pesquisa"
         type="search"
         name="Pesquisa"
         autoComplete="true"
         placeholder="pesquise pelo titulo"
         onChange={(e) => setSearch(e.target.value)}
+        value={String(search)}
       />
 
       <details>
-        <summary>{currentStatus}</summary>
+        <summary role="status">{currentStatus}</summary>
         <ul>
           <StatusList />
         </ul>

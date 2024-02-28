@@ -12,13 +12,13 @@ export function Transactions({ title, from, amount = 0 }: TransactionsProps) {
       <article>
         <p>{title}</p>
         <ul>
-          <li>{from}</li>
-          <li>
+          <span>{from}</span>
+          <span>
             {amount.toLocaleString("pt-br", {
               style: "currency",
               currency: "BRL",
             })}
-          </li>
+          </span>
         </ul>
       </article>
     </section>

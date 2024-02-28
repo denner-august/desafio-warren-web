@@ -20,14 +20,15 @@ Segue abaixo alguns exemplos de telas para uma base, mas sinta-se à vontade par
 ### Modais
 
 #### Modal de depósito
+
 ![https://warren.com.br/assets/desafio-web/modal-deposito.png](https://warren.com.br/assets/desafio-web/modal-deposito.png)
 
+### Modal de resgate
 
-#### Modal de resgate
 ![https://warren.com.br/assets/desafio-web/modal-resgate.png](https://warren.com.br/assets/desafio-web/modal-resgate.png)
 
+### Modal de Movimentação interna
 
-#### Modal de Movimentação interna
 ![https://warren.com.br/assets/desafio-web/movimentacao-interna.png](https://warren.com.br/assets/desafio-web/movimentacao-interna.png)
 
 ## Tecnologias

@@ -7,8 +7,8 @@ import { Transactions } from "../transactions/transactions";
 
 interface modalProps {
   isOpen: boolean;
-  setOpen: (e: boolean) => void;
   id: string;
+  setOpen: (e: boolean) => void;
 }
 
 export function Modal({ id, isOpen, setOpen }: modalProps) {
@@ -17,7 +17,7 @@ export function Modal({ id, isOpen, setOpen }: modalProps) {
 
     if (isOpen) {
       return (
-        <section className={styles.Container}>
+        <section className={styles.Container} role="modal">
           <article className={styles["modal-content"]}>
             <div className={styles.controller}>
               <p>Depósito</p>

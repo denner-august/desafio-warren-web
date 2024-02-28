@@ -2,12 +2,14 @@
 
 ## Este projeto visa concluir o desafio proposto pela empresa warren projeto tentando ser o mais fiel o possível sobre o que foi pedido e demonstrando minhas habilidades como desenvolvedor
 
+### Portfolio: <https://denner-portfolio.vercel.app/>
+
 ### Github: <https://github.com/denner-august>
 
 ### Linkedin: <https://www.linkedin.com/in/denner-bernardes/>
 
-![texto alternativo](apague e coloque a url da sua imagem aqui "titulo")
+![Imagem principal do projeto](./desafio-warren-web/public/projeto/01.PNG)
 
-![texto alternativo](apague e coloque a url da sua imagem aqui "titulo")
+![Imagem utilizando o modal do projeto](./desafio-warren-web/public/projeto/02.PNG)
 
-![texto alternativo](apague e coloque a url da sua imagem aqui "titulo")
+![Imagem utilizando input para pesquisa e status](./desafio-warren-web/public/projeto/03.PNG)
